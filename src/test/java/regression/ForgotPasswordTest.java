@@ -1,15 +1,17 @@
+package regression;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
+import pages.ForgotPassword;
+import pages.Login;
+import util.OpenUrl;
 
-public class ForgotPasswordTest {
+public class ForgotPasswordTest extends OpenUrl {
 
     @Test
     public void forgotPasswordTest()
     {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("http://[::1]/ip");
 
         Login login = new Login(driver);
         login.clickForgotPassword();
