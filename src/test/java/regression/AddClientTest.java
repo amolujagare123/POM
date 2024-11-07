@@ -19,15 +19,18 @@ public class AddClientTest extends DoLogin {
 
         AddClient addClient = new AddClient(driver);
 
-        addClient.setLanguage("English");
-/*
+
         addClient.setClientName("John");
         addClient.setClientSurname("Doe");
+        addClient.setLanguage("Spanish");
         addClient.setStreetAddress1("123 Main St");
         addClient.setStreetAddress2("Apt 4B");
         addClient.setCity("Metropolis");
         addClient.setState("NY");
         addClient.setZipCode("12345");
+        addClient.setCountry("Libya");
+        addClient.setGender("Female");
+        addClient.setBirthdate("05/09/1985");
         addClient.setPhoneNumber("5551234567");
         addClient.setFaxNumber("5559876543");
         addClient.setMobileNumber("5551230987");
@@ -35,6 +38,6 @@ public class AddClientTest extends DoLogin {
         addClient.setWebAddress("http://johndoe.com");
         addClient.setVATID("VAT123456");
         addClient.setTaxesCode("TAX78910");
-        addClient.saveClient();*/
+        addClient.saveClient();
     }
 }
