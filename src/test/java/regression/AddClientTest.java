@@ -1,7 +1,9 @@
 package regression;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.AddClient;
@@ -39,5 +41,7 @@ public class AddClientTest extends DoLogin {
         addClient.setVATID("VAT123456");
         addClient.setTaxesCode("TAX78910");
         addClient.saveClient();
+
+
     }
 }

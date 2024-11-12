@@ -1,5 +1,7 @@
 package regression;
 
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.AddClient;
@@ -18,7 +20,7 @@ public class AddClientDataProviderTest extends DoLogin {
             String streetAddress2, String city, String state, String zipCode, String country,
             String gender, String birthdate, String phoneNumber, String faxNumber,
             String mobileNumber, String emailAddress, String webAddress,
-            String vatId, String taxesCode)
+            String vatId, String taxesCode, String expected, String xpathActual, String message)
     {
         Menu menu = new Menu(driver);
         menu.clickAddClient();
@@ -44,6 +46,22 @@ public class AddClientDataProviderTest extends DoLogin {
         addClient.setVATID(vatId);
         addClient.setTaxesCode(taxesCode);
         addClient.saveClient();
+
+       // String expected = "PLEASE ENTER AT LEAST 3 CHARACTERS.";
+
+        String actual = "";
+        try {
+            actual = driver.findElement(By.xpath(xpathActual)).getText();
+        }
+        catch (Exception e)
+        {
+
+        }
+        System.out.println("actual="+actual);
+        System.out.println("expected="+expected);
+
+        Assert.assertEquals(actual,expected,message);
+
     }
 
     @DataProvider
